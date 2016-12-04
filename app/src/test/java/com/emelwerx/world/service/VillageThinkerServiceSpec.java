@@ -4,6 +4,7 @@ import com.emelwerx.world.model.Food;
 import com.emelwerx.world.model.ScanDirection;
 import com.emelwerx.world.model.Villager;
 import com.emelwerx.world.model.VillagerMode;
+import com.emelwerx.world.model.World;
 import com.emelwerx.world.repository.FoodRepository;
 
 import junit.framework.Assert;
@@ -31,17 +32,29 @@ public class VillageThinkerServiceSpec {
     private FoodRepository foodRepository;
 
     @Mock
+    private WorldServiceProvider mockProvider;
+
+    @Mock
     private FoodScanningService mockFoodScanningService;
 
     @Before
-    public void givenAThinkingVillagerWithNothingToDo() {
+    public void givenAWorldWithAVillagerWithNothingToDo() {
+
+        World testWorld = new World();
+        mockProvider = mock(WorldServiceProvider.class);
+        testWorld.setServiceProvider(mockProvider);
+
         foodRepository = new FoodRepository();
         List<Food> availableFood = new ArrayList<>();
         availableFood.add(new Food());
         foodRepository.setAvailableFood(availableFood);
+        when(mockProvider.getProvider("FoodRepository")).thenReturn(foodRepository);
+
         mockFoodScanningService = mock(FoodScanningService.class);
-        when(mockFoodScanningService.Scan(villager, foodRepository)).thenReturn(ENGINE_STARTUP);
-        target = new VillageThinkerService(mockFoodScanningService, foodRepository);
+        when(mockFoodScanningService.scan(villager)).thenReturn(ENGINE_STARTUP);
+        when(mockProvider.getProvider("FoodScanner")).thenReturn(mockFoodScanningService);
+
+        target = new VillageThinkerService(testWorld);
     }
 
     @Test
@@ -89,6 +102,6 @@ public class VillageThinkerServiceSpec {
         target.think(villager);
 
         //verify
-        verify(mockFoodScanningService, times(1)).Scan(villager, foodRepository);
+        verify(mockFoodScanningService, times(1)).scan(villager);
     }
 }

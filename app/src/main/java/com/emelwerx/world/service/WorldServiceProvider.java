@@ -14,10 +14,6 @@ public class WorldServiceProvider {
         this.servicesMap = servicesMap;
     }
 
-    public Map<String, Object> getServicesMap() {
-        return servicesMap;
-    }
-
     public Object getProvider(String key) {
         return servicesMap.get(key);
     }

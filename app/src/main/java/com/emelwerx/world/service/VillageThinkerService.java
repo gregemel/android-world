@@ -3,22 +3,18 @@ package com.emelwerx.world.service;
 import com.emelwerx.world.model.ScanDirection;
 import com.emelwerx.world.model.Villager;
 import com.emelwerx.world.model.VillagerMode;
+import com.emelwerx.world.model.World;
 import com.emelwerx.world.repository.FoodRepository;
 
 public class VillageThinkerService {
 
-    public VillageThinkerService(
-            FoodScanningService service,
-            FoodRepository foodRepository ) {
-        this.foodScanningService = service;
-        this.foodRepository = foodRepository;
-    }
-
-    /**
-     * service dependencies
-     */
-    private FoodScanningService foodScanningService;
+    private World worldContext;
     private FoodRepository foodRepository;
+    private FoodScanningService foodScanningService;
+
+    public VillageThinkerService(World world) {
+        worldContext = world;
+    }
 
     public void think(Villager villager) {
         if(villager.getCurrentMode() == VillagerMode.NothingToDo) {
@@ -36,6 +32,12 @@ public class VillageThinkerService {
     }
 
     private void ScanForFood(Villager villager) {
-        foodScanningService.Scan(villager, foodRepository);
+        if (foodRepository == null) {
+            foodRepository = (FoodRepository)worldContext.getServiceProvider().getProvider("FoodRepository");
+        }
+        if (foodScanningService == null) {
+            foodScanningService = (FoodScanningService)worldContext.getServiceProvider().getProvider("FoodScanner");
+        }
+        foodScanningService.scan(villager);
     }
 }
