@@ -1,82 +1,67 @@
 This project exists to explore test-driven behavior development
+
     with a simple android java-based application.
 
-This project is not a working android game.
-
-The code is a product of using bdd to work towards building a virtual world, terrarium type
-
-no gui except empty settings; focus is on unit tests, behavior specs
-
-Using behavior driven development to build a virtual world from a growing list of needs.
-
-This example shows separation of java classes into model and testable service classes.
-
-    Models have state and carry properties; created with new; no behavior (except getters/setters)
-
-    Services perform needed action on model objects; created with factories; behavior requires tests
-
-    Lean, solid, and dry; only enough code to cover the needs, nothing more
+    This project is NOT a working android game.
 
 
 
-** game world needs **
+The code is a product of using bdd to
 
+    work a fun problem while test-driven
 
-A game loop pumps each villager's think service many times per second.
+    capture needs in gherkin-style unit tests
 
-During think, villagers
-
-    find, eat, and collect food and other things
-
-    use senses to check for danger and avoid
-
-    plot movement from current point to a target point
-
-    find shelter; find ways to build shelter
-
-    look for other villagers
-
-    villagers meet and trade with one another
-
-    villagers craft goods
-
-    villagers acquire good-will from other villagers; or lose it with bad behavior
-
-    villagers farm, keep animals
-
-    villagers develop regional identity
-
-    regions of villagers cooperate or fight with neighboring regions
+    solve the need with loosely coupled, lean, solid, dry, service oriented java code
 
 
 
+Building the behavior of a terrarium-style virtual world
 
-Specialized Villagers
+    no gui except code-generated empty settings
 
-    Hunters
+    focus is on unit tests, behavior specs
 
-    Gathers
-
-    Tool Makers
-
-    Builders
-
-    Pottery, Baskets, Barrels
-
-    Trappers
-
-    Fishers
-
-    Farmers
-
-    Jewelers
-
-    Metal Workers
-
-    Miners
-
-    Timber Cutters
+    build services for the virtual world
 
 
 
+This example shows separation of java classes into model and service classes.
 
+    Models have state and carry properties, only
+
+        created with new
+
+        no behavior except getters/setters
+
+            which require unit tests -- stupid java!!  >:-|
+
+    Services perform needed action on model objects, loosely coupled to other services, consumers
+
+        code to interface
+
+        create from provider
+
+        behavior requires tests
+
+        services are lean, solid, dry
+
+    Code kept lean, solid, and dry
+
+        quality: to behave as needed
+
+        minimal solution code to meet spec
+
+        uncle bob compliant
+
+        don't repeat yourself
+
+    Practicing test-driven
+
+        imaginary list of needs drives gherkin-style use-cases for each spec
+
+        behavior driven specs defined before solution code is written
+
+        nouns and verbs: transforming needs into data objects and services
+
+        red, green, refactor

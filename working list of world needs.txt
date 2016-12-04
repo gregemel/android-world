@@ -1,0 +1,58 @@
+** game world needs **
+
+A game loop pumps each villager's think service many times per second.
+
+During think, villagers
+
+    find, eat, and collect food
+
+    collect and carry things like food, tools, cloths, other items
+
+    use senses to check for danger and avoid it
+
+    plot movement from current point to a target point
+
+    find shelter; find ways to build shelter
+
+    look for other villagers
+
+    villagers meet and trade with one another
+
+    villagers craft goods
+
+    villagers acquire good-will from other villagers; or lose it with bad behavior
+
+    villagers farm, keep animals
+
+    villagers develop regional identity
+
+    regions of villagers cooperate or fight with neighboring regions
+
+
+
+
+Specialized Villagers
+
+    Hunters
+
+    Gathers
+
+    Tool Makers
+
+    Builders
+
+    Pottery, Baskets, Barrels
+
+    Trappers
+
+    Fishers
+
+    Farmers
+
+    Jewelers
+
+    Metal Workers
+
+    Miners
+
+    Timber Cutters
