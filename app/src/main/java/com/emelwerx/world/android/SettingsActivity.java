@@ -1,4 +1,4 @@
-package com.emelwerx.world;
+package com.emelwerx.world.android;
 
 
 import android.annotation.TargetApi;
@@ -19,6 +19,8 @@ import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import com.emelwerx.world.R;
 
 import java.util.List;
 

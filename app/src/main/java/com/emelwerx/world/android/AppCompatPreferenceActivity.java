@@ -1,4 +1,4 @@
-package com.emelwerx.world;
+package com.emelwerx.world.android;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
