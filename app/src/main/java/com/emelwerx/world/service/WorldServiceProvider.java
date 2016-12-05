@@ -4,6 +4,7 @@ import java.util.Map;
 
 /**
  * provides services to the world
+ * this should probably be replace with something like spring autowire
  */
 
 public class WorldServiceProvider {

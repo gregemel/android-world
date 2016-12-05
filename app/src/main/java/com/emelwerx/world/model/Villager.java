@@ -1,9 +1,12 @@
 package com.emelwerx.world.model;
 
-
 import java.util.List;
 
 public class Villager {
+    private VillagerMode currentMode;
+    private ScanDirection currentScanDirection;
+    private List<Food> knownFood;
+
     public VillagerMode getCurrentMode() {
         return currentMode;
     }
@@ -11,8 +14,6 @@ public class Villager {
     public void setCurrentMode(final VillagerMode currentMode) {
         this.currentMode = currentMode;
     }
-
-    private VillagerMode currentMode;
 
     public ScanDirection getCurrentScanDirection() {
         return currentScanDirection;
@@ -22,8 +23,6 @@ public class Villager {
         this.currentScanDirection = currentScanDirection;
     }
 
-    private ScanDirection currentScanDirection;
-
     public List<Food> getKnownFood() {
         return knownFood;
     }
@@ -31,6 +30,4 @@ public class Villager {
     public void setKnownFood(final List<Food> knownFood) {
         this.knownFood = knownFood;
     }
-
-    private List<Food> knownFood;
 }

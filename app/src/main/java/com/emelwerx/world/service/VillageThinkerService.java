@@ -33,10 +33,12 @@ public class VillageThinkerService {
 
     private void ScanForFood(Villager villager) {
         if (foodRepository == null) {
-            foodRepository = (FoodRepository)worldContext.getServiceProvider().getProvider("FoodRepository");
+            foodRepository = (FoodRepository)worldContext.getServiceProvider()
+                    .getProvider("FoodRepository");
         }
         if (foodScanningService == null) {
-            foodScanningService = (FoodScanningService)worldContext.getServiceProvider().getProvider("FoodScanner");
+            foodScanningService = (FoodScanningService)worldContext.getServiceProvider()
+                    .getProvider("FoodScanner");
         }
         foodScanningService.scan(villager);
     }

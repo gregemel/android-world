@@ -14,7 +14,8 @@ public class FoodScanningService {
 
     public String scan(Villager villager) {
         if (foodRepository == null) {
-            foodRepository = (FoodRepository)worldContext.getServiceProvider().getProvider("FoodRepository");
+            foodRepository = (FoodRepository)worldContext.getServiceProvider()
+                    .getProvider("FoodRepository");
         }
         villager.setKnownFood(foodRepository.getAvailableFood());
         return "Scan direction: " + villager;

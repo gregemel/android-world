@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * world boot
+ * world boot: starts a world with service provider
  */
 
 public class WorldBootService {
