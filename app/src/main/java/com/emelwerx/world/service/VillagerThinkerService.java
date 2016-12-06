@@ -6,13 +6,13 @@ import com.emelwerx.world.model.VillagerMode;
 import com.emelwerx.world.model.World;
 import com.emelwerx.world.repository.FoodRepository;
 
-public class VillageThinkerService {
+public class VillagerThinkerService {
 
     private World worldContext;
     private FoodRepository foodRepository;
     private FoodScanningService foodScanningService;
 
-    public VillageThinkerService(World world) {
+    public VillagerThinkerService(World world) {
         worldContext = world;
     }
 

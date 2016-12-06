@@ -22,7 +22,7 @@ public class WorldBootService {
         Map<String, Object> serviceProviderMap = new HashMap<>();
         serviceProviderMap.put("FoodRepository", new FoodRepository());
         serviceProviderMap.put("FoodScanner", new FoodScanningService(world));
-        //serviceProviderMap.put("VillageThinker", new VillageThinkerService());
+        //serviceProviderMap.put("VillageThinker", new VillagerThinkerService());
         serviceProvider.setServicesMap(serviceProviderMap);
         world.setServiceProvider(serviceProvider);
         return world;

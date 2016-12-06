@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class VillageThinkerServiceSpec {
+public class VillagerThinkerServiceSpec {
 
     private static final String ENGINE_STARTUP = "Hello from World";
 
-    private VillageThinkerService target;
+    private VillagerThinkerService target;
 
     private Villager villager = new Villager();
 
@@ -54,7 +54,7 @@ public class VillageThinkerServiceSpec {
         when(mockFoodScanningService.scan(villager)).thenReturn(ENGINE_STARTUP);
         when(mockProvider.getProvider("FoodScanner")).thenReturn(mockFoodScanningService);
 
-        target = new VillageThinkerService(testWorld);
+        target = new VillagerThinkerService(testWorld);
     }
 
     @Test
@@ -103,5 +103,21 @@ public class VillageThinkerServiceSpec {
 
         //verify
         verify(mockFoodScanningService, times(1)).scan(villager);
+    }
+
+    public void whenThereIsAvailableFoodNearbyThenMoveTowardsFood() {
+
+    }
+
+    public void whenThereIsAvailableFoodWithinReachThenCollectFood() {
+
+    }
+
+    public void whenCollectingFoodThenFoodCarriedIncreases() {
+
+    }
+
+    public void whenHoldingMaximumFoodThenCarryToNearestStorage() {
+
     }
 }
