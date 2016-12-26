@@ -2,7 +2,8 @@ package com.emelwerx.world.model;
 
 import java.util.List;
 
-public class Villager {
+
+public class Villager extends Actor {
     private VillagerMode currentMode;
     private ScanDirection currentScanDirection;
     private List<Food> knownFood;
