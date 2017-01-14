@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * service provider provides domain services using name/object pairings
- * probably should replace with code with Spring @Autowire
+ * probably should replace with Spring @Autowire
  */
 
 public class WorldServiceProviderSpec {

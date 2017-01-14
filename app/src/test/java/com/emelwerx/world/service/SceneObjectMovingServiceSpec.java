@@ -19,18 +19,17 @@ import java.util.List;
 public class SceneObjectMovingServiceSpec {
 
     private SceneObjectMovingService target;
+    private List<SceneObject> sceneObjects;
 
     @Before
     public void setUp() throws Exception {
-
         target = new SceneObjectMovingService();
-
+        sceneObjects = PopulateTestSceneObjects();
     }
 
     @Test
     public void whenMoveThenEachObjectHasVelocityAppliedToLocation() {
-        List<SceneObject> sceneObjects = PopulateTestSceneObjects();
-
+        //setup
         long deltaTime = 5;
         sceneObjects.get(0).setVelocity(new Velocity(4, 5, 6));
         sceneObjects.get(0).setLocation(new Location(0, 0, 0));
@@ -38,8 +37,10 @@ public class SceneObjectMovingServiceSpec {
         sceneObjects.get(1).setVelocity(new Velocity(4, 0, 0));
         sceneObjects.get(1).setLocation(new Location(0, 0, 0));
 
+        //execute
         target.move(deltaTime, sceneObjects);
 
+        //verify
         Assert.assertEquals(sceneObjects.get(0).getLocation().getX(), 20.0f);
         Assert.assertEquals(sceneObjects.get(0).getLocation().getY(), 25.0f);
         Assert.assertEquals(sceneObjects.get(0).getLocation().getZ(), 30.0f);
